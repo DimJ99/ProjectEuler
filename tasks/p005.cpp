@@ -1,23 +1,31 @@
 #include <iostream>
 #include <vector>
 #include "euler_utils.h"
+#include <cmath>
 using namespace std; 
-
-
 
 class Solution {
 
 public:
 long long compute() {
-    long long  out = 0;
-    for (long long i = 0; i <= 606000; i++) {
-    if ((i % 2) == 1) {
-    out += i * i;
+    int check = 0;
+    long long num = 1000;
+    while (check != 20) {
+    check = 0;
+    num++;
+    for (int i = 20; i >= 1 ; i-- ){
+    if (num % i == 0){
+    check ++;
+    } else {
+    break;
     }
-}
-    return out;
+    }
+    }
+    return num;
 }
 };
+
+
 int main() {
     Solution sol;
     long long result;

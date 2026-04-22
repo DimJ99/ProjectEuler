@@ -17,9 +17,10 @@ $(TASK_DIR)/%: $(TASK_DIR)/%.cpp
 run: $(TASK_DIR)/$(P)
 	@./$(TASK_DIR)/$(P)
 
-solve: $(TASK_DIR)/$(P)
-	@echo "=== Problem $(P) ==="
-	@./$(TASK_DIR)/$(P)
+solve: $(BINS)
+	@$(foreach bin,$(BINS), \
+		echo "=== Problem $(notdir $(bin)) ==="; \
+		./$(bin);)
 
 clean:
 	rm -f $(BINS)

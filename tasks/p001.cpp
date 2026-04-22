@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "euler_utils.h"
 using namespace std; 
 
 class Solution {
@@ -17,7 +18,8 @@ long long compute() {
 };
 int main() {
     Solution sol;
-    auto result = sol.compute(); 
+    long long result;
+    TIME_IT(result = sol.compute());
     cout << result << endl;
     return 0;
 }
