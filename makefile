@@ -1,5 +1,6 @@
 CXX      := g++
 CXXFLAGS := -std=c++17 -O2 -Wall -Wextra
+LDFLAGS  := -lgmp -lgmpxx
 
 TASK_DIR := tasks
 TASKS    := $(patsubst $(TASK_DIR)/%.cpp,%,$(wildcard $(TASK_DIR)/p*.cpp))
@@ -12,7 +13,7 @@ all: $(BINS)
 $(TASKS): %: $(TASK_DIR)/%
 
 $(TASK_DIR)/%: $(TASK_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $<
+	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
 
 run: $(TASK_DIR)/$(P)
 	@./$(TASK_DIR)/$(P)

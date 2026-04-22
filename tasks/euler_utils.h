@@ -12,8 +12,7 @@
 class primechecker {
     public:
     bool prime (long long check) {
-    long long sqrt = std::sqrt(check);
-    for (int i = 2; i <= sqrt; i++){
+    for (int i = 2; i*i <= check; i++){
     if (check % i == 0) {return false;}
     }
         return true;

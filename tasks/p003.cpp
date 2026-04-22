@@ -21,8 +21,8 @@ long long compute(long long num) {
 };
 int main() {
     Solution sol;
-    long long result; 
-    TIME_IT(sol.compute(result = 600851475143));
+    long long result;
+    TIME_IT(result = sol.compute(600851475143));
     cout << result << endl;
    
     return 0;
