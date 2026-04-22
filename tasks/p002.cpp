@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "euler_utils.h"
 using namespace std; 
 
 class Solution {
@@ -13,9 +14,9 @@ long long compute() {
     long long tracker =0;
     while ((one < 4000000) && (two < 4000000)){    
     tracker = one + two;
-        cout << tracker << " " ;
-        cout << one << " " ;
-            cout << two << " " << tog <<"\n";
+    cout << tracker << " " ;
+    cout << one << " " ;
+    cout << two << " " << tog <<"\n";
     if (tog % 2) {
     one = tracker;
     } else {
@@ -32,5 +33,6 @@ int main() {
     Solution sol;
     auto result = sol.compute(); 
     cout << result << endl;
+    TIME_IT(Solution());
     return 0;
 }
